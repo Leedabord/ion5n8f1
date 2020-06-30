@@ -16,6 +16,7 @@
   </ion-toolbar>
 -->
 
+<ion-content class="profile-content">
 
     <ion-card>
       <!--<ion-img src="/assets/shapes.svg"></ion-img>-->
@@ -30,7 +31,7 @@
       </ion-card-content>
     </ion-card>
 
-        <ion-card *ngFor="let article of articles">
+<!--         <ion-card *ngFor="let article of articles">
           <ion-img src="{{article.urlToImage}}"></ion-img>
           <ion-card-header>
             <ion-card-subtitle>{{article.title}}</ion-card-subtitle>
@@ -43,7 +44,7 @@
 
           </ion-card-content>
         </ion-card>
-
+-->
 
   <ion-row class="user-details-wrapper">
     <ion-col size="6" class="user-image-wrapper">
@@ -77,4 +78,5 @@
       <ion-button expand="block" fill="outline" color="primary" (click)="signOut()">Sign out</ion-button>
     </ion-col>
   </ion-row>
+
 </ion-content>
