@@ -18,27 +18,25 @@ export class ProfilePage implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private authService: FirebaseAuthService,
-//    private apiService: ApiService
-  ) { }
+    private httpClient: HttpClient
+  ) { 
+
+      const API_KEY = 'e40d07f00b094602953cc3bf8537477e';
+
+  }
 
   ngOnInit() {
     this.route.data
     .subscribe((result) => {
       this.user = result['data'];
-    })
+    });
 
-/*    this.apiService.getFirestore().subscribe(data => {
-      this.policies = data.map(e => {
-        return {
-
-  API_KEY = 'e40d07f00b094602953cc3bf8537477e';
-
-  constructor(private httpClient: HttpClient) { }
+  }
 
   getNews(){
     return this.httpClient.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.API_KEY}`);
-  }*/
 
+    //  https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey='e40d07f00b094602953cc3bf8537477e'
   }
 
   signOut() {
