@@ -17,7 +17,7 @@ export class ProfilePage implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private authService: FirebaseAuthService,
-/    private apiService: ApiService
+//    private apiService: ApiService
   ) { }
 
   ngOnInit() {
@@ -36,13 +36,11 @@ export class ProfilePage implements OnInit {
     });
   }
   
-/*
   ionViewDidEnter(){
     this.apiService.getNews().subscribe((data)=>{
       console.log(data);
       this.articles = data['articles'];
     });
   }
-*/
 
 }
