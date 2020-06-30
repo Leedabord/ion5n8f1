@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProfileModel } from './profile.model';
 import { FirebaseAuthService } from '../firebase-auth.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,11 +11,13 @@ import { FirebaseAuthService } from '../firebase-auth.service';
 })
 export class ProfilePage implements OnInit {
   user: ProfileModel;
+  articles;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private authService: FirebaseAuthService
+    private authService: FirebaseAuthService,
+    private apiService: ApiService
   ) { }
 
   ngOnInit() {
@@ -32,5 +35,13 @@ export class ProfilePage implements OnInit {
       console.log('signout error', error);
     });
   }
+  
+  ionViewDidEnter(){
+    this.apiService.getNews().subscribe((data)=>{
+      console.log(data);
+      this.articles = data['articles'];
+    });
+  }
+
 
 }
