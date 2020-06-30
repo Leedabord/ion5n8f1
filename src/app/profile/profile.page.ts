@@ -20,9 +20,7 @@ export class ProfilePage implements OnInit {
     private authService: FirebaseAuthService,
     private httpClient: HttpClient
   ) { 
-
-      const API_KEY = 'e40d07f00b094602953cc3bf8537477e';
-
+   // newsapi.org API_KEY = 'e40d07f00b094602953cc3bf8537477e';  
   }
 
   ngOnInit() {
@@ -31,12 +29,6 @@ export class ProfilePage implements OnInit {
       this.user = result['data'];
     });
 
-  }
-
-  getNews(){
-    return this.httpClient.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.API_KEY}`);
-
-    //  https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey='e40d07f00b094602953cc3bf8537477e'
   }
 
   signOut() {
@@ -54,6 +46,13 @@ export class ProfilePage implements OnInit {
       this.articles = data['articles'];
     });
   }
+
+//  getNews(){
+//    return this.httpClient.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.API_KEY}`);
+
+//   https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey='e40d07f00b094602953cc3bf8537477e'
+//  }
 */
+
 
 }
